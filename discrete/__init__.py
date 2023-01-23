@@ -6,19 +6,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     logging.info('HTTP trigger - discrete')
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
+    logging.info(req.get_body().decode('utf-8'))
 
-    if name:
-        return func.HttpResponse(f"Hello {name}!")
-    else:
-        return func.HttpResponse(
-            "Please pass a name on the query string or in the request body",
-            status_code=400
-        )
+    return func.HttpResponse(status_code=204)
