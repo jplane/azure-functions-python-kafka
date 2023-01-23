@@ -1,0 +1,27 @@
+{
+    "scriptFile": "__init__.py",
+    "disabled": false,    
+    "bindings": [
+        {
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [ "put" ]
+        },
+        {
+            "type": "kafka",
+            "direction": "out",
+            "name": "out",
+            "brokerList": "%KafkaBroker%",
+            "topic": "%KafkaTopic%",
+            "protocol": "plaintext",
+            "authenticationMode": "plain"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "$return"
+        }
+    ]
+}

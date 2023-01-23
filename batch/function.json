@@ -1,0 +1,15 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "kafkaTrigger",
+      "name": "kevent",
+      "direction": "in",
+      "brokerList": "%KafkaBroker%",
+      "topic": "%KafkaTopic%",
+      "protocol": "plaintext",
+      "authenticationMode": "plain",
+      "consumerGroup": "%KafkaConsumerGroup%"
+    }
+  ]
+}
